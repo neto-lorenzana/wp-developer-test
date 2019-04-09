@@ -1,0 +1,32 @@
+$module: '.Button';
+#{$module} {
+
+  text-decoration: none;
+  border-radius: 2em;
+  padding: 0.95em 1.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.125em;
+  font-size: 0.9em;
+  font-weight: 600;
+
+  &, &:visited {
+    background-color: $blue;
+    color: white;
+
+    &:hover,
+    &:focus {
+      background-color: $blue-hover;
+      color: white;
+    }
+
+    &:active {
+    }
+  }
+
+  &--dark {
+    &, &:visited {
+      background-color: $grey;
+      color: white;
+    }
+  }
+}

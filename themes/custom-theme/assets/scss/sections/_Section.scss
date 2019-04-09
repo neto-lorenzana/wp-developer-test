@@ -1,0 +1,30 @@
+$module: '.Section';
+#{$module} {
+
+  padding:0 2em;
+
+  &__inner{
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+
+  &__title{
+    font-size: 2.6em;
+    text-align: center;
+    margin: 0 auto 0.95em;
+  }
+
+  &__sub-title{
+    font-size: 1.3em;
+    text-align: center;
+    margin: -1.4em auto 2.4em;
+  }
+
+  @media(min-width: 768px) {
+      &__title{
+        font-size: 3.4em;
+        margin-bottom: 0.65em;
+      }
+  }
+
+}

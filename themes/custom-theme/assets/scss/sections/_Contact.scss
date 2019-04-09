@@ -1,0 +1,29 @@
+$module: '.Contact';
+#{$module} {
+  background-color: $blue;
+  color: white;
+  min-height: calc(80vh);
+
+  &__inner {
+    width: 100%;
+  }
+
+  &__form {
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  &__success {
+    background-color: $green;
+    text-align: center;
+    padding: 1.5em;
+    border-radius: 0.25em;
+    font-size: 1.2em;
+    margin: 0 auto 2em;
+    max-width: 650px;
+  }
+
+  .Button {
+    font-size: 1.1em;
+  }
+}

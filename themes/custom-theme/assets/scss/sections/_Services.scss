@@ -1,0 +1,64 @@
+$module: '.Services';
+#{$module} {
+
+  &__inner {
+    padding: 4em 0;
+  }
+
+  &__tile {
+    padding: 1px;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+
+    & + & {
+    }
+  }
+
+  &__tile-title {
+    font-size: 1.4em;
+    margin-top: 0;
+  }
+
+  &__tile-excerpt {
+
+  }
+
+  &__tile-action {
+    margin-top: 1.5em;
+  }
+
+  .Button {
+    font-size: 0.7em;
+    display: inline-block;
+  }
+
+  @media(min-width: 768px) {
+    background-color: $grey-lightest;
+
+    &__inner {
+      padding: 5% 0 7%;
+    }
+
+    &__tiles {
+      display: flex;
+    }
+
+    &__tile {
+      flex: 1;
+      background-color: #fff;
+      border-radius: 0.125em;
+      padding: 1.5em {
+        top: 2em;
+      }
+      //box-shadow: 0 1rem 3rem rgba(0,0,0,0.05);
+      box-shadow: 0 3px 20px rgba(28, 49, 70, .08), 0 1px 2px rgba(28, 49, 70, .04);
+
+      & + & {
+        margin-top: 0;
+        margin-left: 2em;
+      }
+    }
+
+  }
+}

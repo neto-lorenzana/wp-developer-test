@@ -1,0 +1,97 @@
+$module: '.OurTeam';
+#{$module} {
+
+  &__inner {
+    padding: 4em 0;
+  }
+
+  &__post-text {
+    text-align: center;
+    font-size: 0.9em;
+    margin: 2em auto;
+    max-width: 800px;
+    line-height: 1.5;
+  }
+
+  &__members {
+    text-align: center;
+    border: solid $grey-lightest {
+      width: 2px 0;
+    }
+    padding: 2em 0;
+  }
+
+  &__action {
+    text-align: center;
+    margin-bottom: 2em;
+
+    .Button {
+      display: inline-block;
+    }
+  }
+
+  &__member {
+    margin: 1em;
+    display: inline-block;
+  }
+
+  &__member-photo {
+    text-align: center;
+    max-width: 70px;
+    margin: 0 auto;
+
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  &__member-info {
+
+    width: 130px;
+
+    h4 {
+      margin: 0;
+    }
+
+    h5 {
+      margin: 0;
+      font-weight: 400;
+    }
+  }
+
+  @media(min-width: 768px) {
+
+    &__inner {
+      padding: 5% 0;
+    }
+
+    &__post-text {
+      margin: 4% auto;
+    }
+
+  }
+
+  @media(min-width: 1200px) {
+
+    &__members {
+      display: flex;
+      justify-content: center;
+    }
+
+    &__member {
+      display: flex;
+      align-items: center;
+      margin: 2em;
+    }
+
+    &__member-photo {
+      margin-right: 1em;
+    }
+
+    &__member-info {
+      text-align: left;
+      width: auto;
+    }
+
+  }
+}

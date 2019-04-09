@@ -1,0 +1,43 @@
+$module: '.Footer';
+#{$module} {
+  background-color: $grey;
+  color: white;
+  font-size: 0.9em;
+  padding: {
+    top: 2em;
+    bottom: 2em;
+  }
+  line-height: 2;
+
+  a{
+    &, &:visited{
+      color: $grey-light;
+      text-decoration: none;
+      &:hover,
+      &:focus{
+        text-decoration: underline;
+      }
+      &:active{}
+    }
+  }
+
+  &__title{
+    text-transform: uppercase;
+    font-size: 0.9em;
+  }
+
+  &__col {
+    margin: 1em;
+  }
+
+  @media(min-width: 768px) {
+    &__inner {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &__col {
+      flex: 1;
+    }
+  }
+}

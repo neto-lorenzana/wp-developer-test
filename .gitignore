@@ -1,0 +1,12 @@
+# dev plugins
+plugins/fakerpress
+plugins/query-monitor
+plugins/wp-cli-login-server
+plugins/wp-migrate-db-pro
+plugins/wp-migrate-db-pro-cli
+plugins/wp-smtp-config
+
+# various generated files
+upgrade
+uploads
+db.php

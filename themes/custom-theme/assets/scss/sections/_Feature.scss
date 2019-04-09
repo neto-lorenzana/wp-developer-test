@@ -1,0 +1,57 @@
+$module: '.Feature';
+#{$module} {
+  background-image: url('/wp-content/themes/custom-theme/assets/img/action-athlete-blue-863988.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__content {
+    text-align: center;
+    color: white;
+    max-width: 800px;
+
+    h1 {
+      font-size: 3.4em;
+      line-height: 1.1;
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      font-size: 1.5em;
+      margin-bottom: 1.75em;
+    }
+
+    .Button{
+      display: inline-block;
+      margin-top: 1.6em;
+    }
+  }
+
+  @media(min-width: 768px) {
+    &__content{
+      h1 {
+        font-size: 5em;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,43 @@
+{
+    "key": "group_5ca7ffc67f86d",
+    "title": "Contact Page Template",
+    "fields": [
+        {
+            "key": "field_5ca7ffdf34604",
+            "label": "Thank you message",
+            "name": "thank_you_message",
+            "type": "textarea",
+            "instructions": "Line breaks are supported",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 2,
+            "new_lines": "br"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "templates\/contact-template.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1554515709
+}

@@ -1,0 +1,36 @@
+$module: '.CTA';
+#{$module} {
+  background-color: $blue;
+  color: white;
+  text-align: center;
+
+  &__inner {
+    padding: {
+      top: 4em;
+      bottom: 4em;
+    }
+  }
+
+  &__tagline{
+    margin-bottom: 1.4em;
+    font-size: 2.2em;
+  }
+
+  &__action{
+    font-size: 1.1em;
+  }
+
+  @media(min-width: 768px) {
+    &__inner {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__tagline {
+      margin-bottom: 0;
+      margin-right: auto;
+    }
+  }
+}

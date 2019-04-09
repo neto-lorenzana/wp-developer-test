@@ -1,0 +1,36 @@
+$module: '.Header';
+#{$module} {
+
+  text-align: center;
+
+  padding: 1em 2em;
+
+  &__left {
+    img {
+      max-width: 220px;
+    }
+  }
+
+  &__right {
+  }
+
+  @media(min-width: 768px) {
+
+    padding:{
+      top: 0;
+      bottom: 0;
+    }
+
+    &__inner {
+      display: flex;
+      align-items: flex-end;
+    }
+    &__left {
+      text-align: left;
+    }
+    &__right {
+      text-align: right;
+    }
+  }
+
+}

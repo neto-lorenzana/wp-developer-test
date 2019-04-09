@@ -1,0 +1,54 @@
+$module: '.NavMenu';
+#{$module} {
+  &__menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .menu-item {
+    display: inline-block;
+
+    &.menu-item {
+      margin-left: 1em;
+    }
+  }
+
+  a {
+
+    position: relative;
+    transition: 0.16s color ease-out;
+    &:after{
+      content:'';
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transform: translateY(-15%);
+      background-color: $blue-hover;
+      opacity: 0;
+      transition: 0.16s all ease-out;
+    }
+
+    &, &:visited {
+      color: black;
+      text-decoration: none;
+      padding: 0.65em;
+
+      &:hover,
+      &:focus {
+        color: white;
+        //background-color: $blue-hover;
+        &:after{
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      &:active {
+      }
+    }
+  }
+}

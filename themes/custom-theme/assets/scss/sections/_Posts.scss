@@ -1,0 +1,87 @@
+$module: '.Posts';
+#{$module} {
+
+  background-color: $grey-lightest;
+
+  &__inner {
+    padding: 4em 0;
+  }
+
+  &__post {
+    & + & {
+      margin-top: 4em;
+    }
+  }
+
+  &__post-image {
+    width: 100%;
+    padding-bottom: 56%;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__post-title {
+    font-size: 1.4em;
+    margin-top: 1em;
+    margin-bottom: 0.65em;
+  }
+
+  &__post-excerpt {
+  }
+
+  &__pagination{
+    text-align: center;
+    margin: 4em auto 1em;
+    .posts-navigation{}
+    .screen-reader-text{
+      display: none;
+    }
+    .nav-links{
+      > div{
+        display: inline-block;
+        + div{
+          margin-left: 1em;
+        }
+      }
+      a{
+        display: inline-block;
+        background-color: $blue;
+        color: white;
+        text-decoration: none;
+        border-radius: 2em;
+        padding: 0.95em 1.85em;
+        text-transform: uppercase;
+        letter-spacing: 0.125em;
+        font-size: 0.9em;
+        font-weight: 600;
+        &, &:visited{
+
+          &:hover,
+          &:focus{}
+          &:active{}
+        }
+      }
+    }
+  }
+
+  @media(min-width: 768px) {
+
+    &__inner {
+      padding: 5% 0;
+    }
+
+  }
+
+  @media(min-width: 960px) {
+
+    &__posts {
+      display: grid;
+      grid-template-columns: percentage(1/3) percentage(1/3) percentage(1/3);
+      grid-gap: 2em;
+    }
+
+    &__post {
+    }
+  }
+
+}
