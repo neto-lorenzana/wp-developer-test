@@ -23,7 +23,8 @@ $module: '.Header';
 
     &__inner {
       display: flex;
-      align-items: flex-end;
+      align-items: center;
+      justify-content: right;
     }
     &__left {
       text-align: left;
