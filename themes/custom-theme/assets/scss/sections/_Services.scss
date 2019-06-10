@@ -34,6 +34,10 @@ $module: '.Services';
     display: inline-block;
   }
 
+  .Button:hover {
+    transition: background-color 160ms linear;
+  }
+
   @media(min-width: 768px) {
     background-color: $grey-lightest;
 

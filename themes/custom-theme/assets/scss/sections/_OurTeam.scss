@@ -28,6 +28,10 @@ $module: '.OurTeam';
     .Button {
       display: inline-block;
     }
+
+    .Button:hover {
+      transition: background-color 160ms linear;
+    }
   }
 
   &__member {

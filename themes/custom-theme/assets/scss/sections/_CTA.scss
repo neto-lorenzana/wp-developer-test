@@ -20,6 +20,10 @@ $module: '.CTA';
     font-size: 1.1em;
   }
 
+  .Button:hover {
+    transition: background-color 160ms linear;
+  }
+
   @media(min-width: 768px) {
     &__inner {
       display: flex;
