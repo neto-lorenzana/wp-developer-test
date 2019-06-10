@@ -32,6 +32,13 @@ $module: '.Post';
     display: flex;
     align-items: center;
     justify-content: center;
+
+    background:     
+    linear-gradient(
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.35));
   }
 
   &__post-title {
@@ -39,7 +46,7 @@ $module: '.Post';
     color: white;
     width: 90%;
     max-width: 1024px;
-    text-align: center;
+    text-align: center;    
   }
 
   &__post-excerpt {
