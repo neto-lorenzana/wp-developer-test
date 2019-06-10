@@ -37,7 +37,7 @@
             </div>
 
             <div class="Posts__pagination">
-
+                <?php posts_nav_link(' || ', 'Newer entries', 'Previous entries'); ?>
             </div>
 
 		<?php endif; ?>
