@@ -3,6 +3,9 @@ $module: '.Contact';
   background-color: $blue;
   color: white;
   min-height: calc(80vh);
+  
+  padding-block-start: 3em;
+  padding-block-end: 3em;
 
   &__inner {
     width: 100%;
