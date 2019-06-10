@@ -23,3 +23,8 @@ add_action( 'after_setup_theme', function () {
 	\WPLMixTheme\AdminPost\ContactFormSubmissionHandler::get_instance()->init();
 	\WPLMixTheme\AdminPost\SeedDatabase::get_instance()->init();
 } );
+
+function limit_excerpt_length( $length ) {
+    return 30;
+}
+add_filter( 'excerpt_length', 'limit_excerpt_length');
