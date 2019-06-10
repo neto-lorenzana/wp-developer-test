@@ -79,11 +79,15 @@ $module: '.Posts';
       grid-template-columns: percentage(1/3) percentage(1/3) percentage(1/3);      
       grid-column-gap: 1em;
     }
-
+    
     &__post {
       & + & {
         margin-top: inherit;
       }
+    }
+
+    &__post:nth-child(n+4) {
+      margin-top: 3em;
     }
   }
 
