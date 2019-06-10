@@ -2,7 +2,10 @@ $module: '.Header';
 #{$module} {
 
   text-align: center;
-
+  position: sticky;
+  top: 0;
+  background: #FFF;
+  z-index: 150;
   padding: 1em 2em;
 
   &__left {
