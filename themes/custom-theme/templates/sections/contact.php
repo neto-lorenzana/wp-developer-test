@@ -10,9 +10,15 @@ $action = \WPLMixTheme\AdminPost\ContactFormSubmissionHandler::get_instance()->g
             <?php the_content() ?>
         </div>
 
+        <?php
+            if ($_GET['status'] == 'success'){
+        ?>
         <div class="Contact__success">
 		    <?php the_field( 'thank_you_message' ) ?>
         </div>
+        <?php
+            }
+        ?>
 
         <form class="Contact__form" action="<?= $action ?>" method="post">
 

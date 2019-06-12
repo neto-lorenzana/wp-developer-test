@@ -69,6 +69,7 @@ function contact_form_entries_column_data( $column, $post_id ) {
 
 //	Get data from 
 add_action( 'admin_post_ContactFormSubmissionHandler', 'prefix_admin_saveContactFormSubmissionHandler' );
+add_action( 'admin_post_nopriv_ContactFormSubmissionHandler', 'prefix_admin_saveContactFormSubmissionHandler' );
 
 function prefix_admin_saveContactFormSubmissionHandler() {
 	$jsonData = file_get_contents(ABSPATH . 'wp-content/themes/custom-theme/acf-json/group_5c994a670c7b8.json');
