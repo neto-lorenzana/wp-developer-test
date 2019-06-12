@@ -28,3 +28,84 @@ function limit_excerpt_length( $length ) {
     return 30;
 }
 add_filter( 'excerpt_length', 'limit_excerpt_length');
+
+//	ACF - Columns for Contact form entries
+function contact_form_entries_page_columns($columns) {
+	$columns = array(
+		'cb'	 	=> '<input type="checkbox" />',
+		'title'	=> 'Title',
+		'name'	=> 'Person name',
+		'email' => 'Email',
+	);
+	return $columns;
+}
+add_filter("manage_contact-form-entry_posts_columns", "contact_form_entries_page_columns");
+
+add_filter('manage_contact-form-entry_posts_custom_column','contact_form_entries_column_data',1,2);
+
+function contact_form_entries_column_data( $column, $post_id ) {
+	
+	// setup our return text
+	$output = '';
+	
+	switch( $column ) {
+		case 'name':
+			// get the custom name data
+			$name = get_field('name', $post_id );
+			$output .= $name;
+			break;
+		case 'email':
+			// get the custom email data
+			$email = get_field('email', $post_id );
+			$output .= $email;
+			break;
+		
+	}
+	
+	// echo the output
+	echo $output;
+	
+}
+
+//	Get data from 
+add_action( 'admin_post_ContactFormSubmissionHandler', 'prefix_admin_saveContactFormSubmissionHandler' );
+
+function prefix_admin_saveContactFormSubmissionHandler() {
+	$jsonData = file_get_contents(ABSPATH . 'wp-content/themes/custom-theme/acf-json/group_5c994a670c7b8.json');
+	$acfData = json_decode($jsonData);
+	
+	//	Get data from form
+	$data = array(
+		'name'=> esc_attr( $_POST['name'] ),
+		'email'=> esc_attr( $_POST['email'] ),
+		'message'=> esc_attr( $_POST['message'] ),
+	);
+
+	//	Save data to custom post type
+
+	//	Save custom post type header
+	$postID = wp_insert_post( 
+		array(
+			'post_type'=>'contact-form-entry',
+			'post_title'=>$data['name'] .'|'. $data['email'],
+			'post_status'=>'publish',
+		), 
+		true
+	);
+	//	Save custom post type fields
+	update_field(getACFFieldKey($acfData, 'name'), $data['name'], $postID);
+	update_field(getACFFieldKey($acfData, 'email'), $data['email'], $postID);
+	update_field(getACFFieldKey($acfData, 'message'), $data['message'], $postID);
+
+	return $postID;
+}
+
+function getACFFieldKey($jsonData, $field){
+	for($index=0; $index<$jsonData->fields; $index++){
+		$fieldEntry = $jsonData->fields[$index];
+		if ($fieldEntry->name == $field){
+			return $fieldEntry->key;
+		}
+	}
+	return null;
+}
