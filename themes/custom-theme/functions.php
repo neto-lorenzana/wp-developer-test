@@ -102,6 +102,10 @@ function prefix_admin_saveContactFormSubmissionHandler() {
 	update_field(getACFFieldKey($acfData, 'email'), $data['email'], $postID);
 	update_field(getACFFieldKey($acfData, 'message'), $data['message'], $postID);
 
+	//	Send message to Admin
+	if ($postID > -1){
+		sendMessageToAdmin($data['email'], $data['name'], $data['message']);
+	}
 	return $postID;
 }
 
@@ -113,4 +117,10 @@ function getACFFieldKey($jsonData, $field){
 		}
 	}
 	return null;
+}
+
+function sendMessageToAdmin($from, $name, $message){
+	$to = get_option('admin_email');	
+	$headers = array('From: ' . $name . ' <' . $from . '>', 'Content-Type: text/html; charset=UTF-8');
+	wp_mail( $to, "Contact message from: $name", $message, $headers);
 }
