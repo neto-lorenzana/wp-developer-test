@@ -74,12 +74,16 @@ add_action( 'admin_post_nopriv_ContactFormSubmissionHandler', 'prefix_admin_save
 function prefix_admin_saveContactFormSubmissionHandler() {
 	$jsonData = file_get_contents(ABSPATH . 'wp-content/themes/custom-theme/acf-json/group_5c994a670c7b8.json');
 	$acfData = json_decode($jsonData);
-	
+	//	Sanitize values
+	$name = sanitize_text_field($_POST['name']);
+	$email = sanitize_text_field($_POST['email']);
+	$message = sanitize_textarea_field($_POST['message']);
+
 	//	Get data from form
 	$data = array(
-		'name'=> esc_attr( $_POST['name'] ),
-		'email'=> esc_attr( $_POST['email'] ),
-		'message'=> esc_attr( $_POST['message'] ),
+		'name'=> esc_attr( $name ),
+		'email'=> esc_attr( $email ),
+		'message'=> esc_attr( $message ),
 	);
 
 	//	Save data to custom post type
