@@ -11,13 +11,19 @@ $action = \WPLMixTheme\AdminPost\ContactFormSubmissionHandler::get_instance()->g
         </div>
 
         <?php
-            if ($_GET['status'] == 'success'){
-        ?>
-        <div class="Contact__success">
-		    <?php the_field( 'thank_you_message' ) ?>
-        </div>
-        <?php
-            }
+            if (isset($_GET['status'])){
+                if ($_GET['status'] == 'success'){?>
+                <div class="Contact__success">
+                    <?php the_field( 'thank_you_message' ) ?>
+                </div>
+                <?php
+                } else {?>
+                <div class="Contact__fails">
+                    <?php the_field( 'message_not_sent' ) ?>
+                </div>
+                <?php
+                }
+            }            
         ?>
 
         <form class="Contact__form" action="<?= $action ?>" method="post">

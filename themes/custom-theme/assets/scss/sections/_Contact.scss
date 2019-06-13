@@ -26,6 +26,16 @@ $module: '.Contact';
     max-width: 650px;
   }
 
+  &__fails {
+    background-color: $red;
+    text-align: center;
+    padding: 1.5em;
+    border-radius: 0.25em;
+    font-size: 1.2em;
+    margin: 0 auto 2em;
+    max-width: 650px;
+  }
+
   .Button {
     font-size: 1.1em;
   }
